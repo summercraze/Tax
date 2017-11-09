@@ -1,8 +1,9 @@
-
+//this is the testing program to test the tax class
 public class testTax
 {
 	public static void main(String[] args)
 	{
+		//tax bracket for 2001
 		int [][] taxRate01SingleFiler = 
 
 			{
@@ -38,7 +39,10 @@ public class testTax
 					{297351,Integer.MAX_VALUE}
 			};
 
+		//rate for the 2001 tax
 		double[] rate01 = {15,27.5,30.5,35.5,39.1};
+		
+		//print out of the tax in year 2001
 		System.out.println("This is taxable income for 2001:");
 		System.out.format("%12s%25s%32s%25s%25s", "Income","Single Filers", 
 				" Married Filing Jointly",
@@ -58,6 +62,9 @@ public class testTax
 			Tax headOfFamily = new Tax(Tax.HEAD_OF_HOUSEHOLD, taxRate01Head, rate01, income);
 			System.out.format("%24s%.2f","$",headOfFamily.getTax());
 		};
+		
+		
+		//2009 tax rate
 		int [][] taxRate09SingleFiler = 
 
 			{
@@ -97,7 +104,10 @@ public class testTax
 					{37951,Integer.MAX_VALUE}
 			};
 
+		//this is the rate for 2009
 		double[] rate09 = {10.0,15.0,25.0,28.0,33.0,35.0};
+		
+		//print out the table
 		System.out.println("\nThis is taxable income for 2009:");
 		System.out.format("%12s%25s%32s%25s%25s", "Income","Single Filers", 
 				" Married Filing Jointly",

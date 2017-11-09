@@ -2,7 +2,7 @@
 public class Tax 
 {
   public final static int SINGLE_FILER = 0;
-  public final static int MARRIED_JOINTLY_OR_QUALIFYING_WINDOW = 1;
+  public final static int MARRIED_JOINTLY_OR_QUALIFYING_WIDOW = 1;
   public final static int MARRIED_SEPARATELY = 2;
   public final static int HEAD_OF_HOUSEHOLD = 3;
   
@@ -60,18 +60,15 @@ public class Tax
   
   public double getTax()
   {
-	  System.out.println("ERROR CHECKING:");
 	  for(int row = 0;row < this.brackets.length;row++)
 	  {
 		  for(int column = 0;column < this.brackets[row].length;column++)
 		  {
-			  if(this.taxableIncome < this.brackets[row][column])
+			  if(this.taxableIncome <= this.brackets[row][column])
 			  {
-				  System.out.println("This is the bracket: $" + this.brackets[row][0] 
-						  + " - $" + this.brackets[row][column] );
-				  System.out.println("This is tax rate:" + this.rates[row] + "%" );
+
 				  this.taxPaid = (this.rates[row]/100)*this.taxableIncome;
-				  
+				  return taxPaid; 
 			  }
 		  }
 	  }
